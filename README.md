@@ -1,8 +1,8 @@
 # AWS-Terraform-Modules: Jenkins
 By using Terraform,
 1. An EC2 instance was created on AWS,
-1. Docker was installed on the instance, and
-1. A Jenkins image and container were built.
+1. Jenkins installed on the instance, and
+
 
 #### Pre-configurations
 You should update your main.tf and save as below:
@@ -21,18 +21,6 @@ The remaining steps will be completed manually as below
 1. On terminal, copy and connect to the EC2 through ssh information.
 
     **Note:** Make sure you are on the same directory as your .pem file.
-
-1. Get docker images and docker containers information. You should see jenkins image is started
-    ```
-        docker images && docker container ls
-    ```
-    **Note:** If you use different image, your have to change the container name. My container's name is **'jenkins-nodejs-dind'**.
-
-1. Copy below on your terminal
-    ```
-        docker exec -it jenkins-nodejs-dind /bin/bash
-    ```
-   **Note:** Here we used **exec** to be able to execute the container where we started using Jenkins
 
 1. On the terminal, copy the below on your opened container terminal.
     **Note:** If it doesn't work add 'sudo' before the *cat*
